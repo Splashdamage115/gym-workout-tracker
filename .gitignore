@@ -14,8 +14,9 @@ dist/
 downloads/
 eggs/
 .eggs/
-lib/
-lib64/
+# Note: lib/ for Python packages, but NOT flutter_app/lib/
+/lib/
+/lib64/
 parts/
 sdist/
 var/
