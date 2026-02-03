@@ -1,6 +1,24 @@
 # Gym Workout Tracker
 
-A simple and easy-to-use command-line application for logging and tracking gym workouts. Organize your workouts by muscle groups and training days (Push/Pull/Legs split), track your progress, and review your training history.
+A workout tracking application available in two versions:
+- **📱 Flutter App** - Cross-platform mobile/web/desktop app (NEW!)
+- **🖥️ Python CLI** - Simple command-line application
+
+Both versions help you log and track gym workouts organized by Push/Pull/Legs split, track your progress, and review your training history.
+
+## 🆕 Flutter Version Available!
+
+**Want to use this on your phone, tablet, or any device?** Check out the new Flutter version:
+
+👉 **[See Flutter Guide](FLUTTER_GUIDE.md)** for setup instructions
+
+The Flutter version works on Android, iOS, Web, Windows, macOS, and Linux!
+
+---
+
+## Python CLI Version (This Document)
+
+This is the documentation for the original Python command-line version.
 
 ## Features
 
