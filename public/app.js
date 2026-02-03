@@ -235,7 +235,7 @@ function displayWorkouts(workouts) {
     return `
       <div class="workout-card">
         <div class="workout-header">
-          <h3>${workout.exercise_name}</h3>
+          <h3>${escapeHtml(workout.exercise_name)}</h3>
           <span class="workout-date">${date}</span>
         </div>
         <div class="workout-details">
@@ -244,13 +244,28 @@ function displayWorkouts(workouts) {
           ${workout.weight ? `<div class="workout-detail"><strong>Weight:</strong> ${workout.weight} lbs</div>` : ''}
           ${workout.duration ? `<div class="workout-detail"><strong>Duration:</strong> ${workout.duration} min</div>` : ''}
         </div>
-        ${workout.notes ? `<div class="workout-notes">Notes: ${workout.notes}</div>` : ''}
+        ${workout.notes ? `<div class="workout-notes">Notes: ${escapeHtml(workout.notes)}</div>` : ''}
         <div class="workout-actions">
-          <button class="btn-delete" onclick="deleteWorkout(${workout.id})">Delete</button>
+          <button class="btn-delete" data-workout-id="${workout.id}">Delete</button>
         </div>
       </div>
     `;
   }).join('');
+
+  // Attach event listeners to delete buttons
+  container.querySelectorAll('.btn-delete').forEach(button => {
+    button.addEventListener('click', () => {
+      const workoutId = parseInt(button.getAttribute('data-workout-id'));
+      deleteWorkout(workoutId);
+    });
+  });
+}
+
+// Escape HTML to prevent XSS
+function escapeHtml(text) {
+  const div = document.createElement('div');
+  div.textContent = text;
+  return div.innerHTML;
 }
 
 async function deleteWorkout(id) {
