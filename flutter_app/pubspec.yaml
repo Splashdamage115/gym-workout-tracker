@@ -20,3 +20,9 @@ dev_dependencies:
 
 flutter:
   uses-material-design: true
+  
+  # Fonts configuration to handle emoji and special characters
+  fonts:
+    - family: Roboto
+      fonts:
+        - asset: packages/flutter/assets/fonts/MaterialIcons-Regular.otf
