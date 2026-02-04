@@ -17,15 +17,7 @@
 <body>
   <script>
     window.addEventListener('load', function(ev) {
-      _flutter.loader.loadEntrypoint({
-        serviceWorker: {
-          serviceWorkerVersion: serviceWorkerVersion,
-        }
-      }).then(function(engineInitializer) {
-        return engineInitializer.initializeEngine();
-      }).then(function(appRunner) {
-        return appRunner.runApp();
-      });
+      _flutter.loader.load();
     });
   </script>
 </body>
